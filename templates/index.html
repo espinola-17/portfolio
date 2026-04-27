@@ -29,7 +29,7 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hi, I'm <span class="gradient-text">Enrico Spinola</span></h1>
+                    <h1>Hi, I'm <span class="gradient-text">Enrico Spinola, Jr.</span></h1>
                     <p class="subtitle">// {{ about.title }}</p>
                     <p>{{ about.bio }}</p>
                     <div class="cta-buttons">
@@ -40,7 +40,14 @@
                 <div class="hero-image">
                     <div class="profile-container">
                         <div class="profile-img">
-                            <span>👨‍💻</span>
+                            {% if url_for('static', filename='images/profile.jpg') %}
+                                <img src="{{ url_for('static', filename='images/profile.jpg') }}" 
+                                    alt="Personal Photo" 
+                                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                                <span style="display:none;">👨‍💻</span>
+                            {% else %}
+                                <span>👨‍💻</span>
+                            {% endif %}
                         </div>
                     </div>
                 </div>
@@ -142,7 +149,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2026 Enrico Spinola, Jr. | Built with Flask + Python</p>
+            <p>&copy; 2026 | Enrico Spinola, Jr. | Built with Flask + Python</p>
             <p class="tech-stack">Python • Flask • HTML/CSS • Self-Hosted on R510</p>
         </div>
     </footer>
