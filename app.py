@@ -9,12 +9,12 @@ from datetime import datetime
 
 app = Flask(__name__)
 
-# Configuration - UPDATE THESE WITH YOUR INFO!
+# Configuration and Credentials
 app.config['GITHUB_USERNAME'] = os.getenv('GITHUB_USERNAME', 'espinola-17')
 app.config['EMAIL'] = 'enrico@enricospinola.com'
 app.config['LINKEDIN'] = 'spinolajrenrico'
 
-# Portfolio data - UPDATE WITH YOUR ACTUAL SKILLS!
+# Portfolio data 
 SKILLS = {
     'Cloud & Infrastructure': ['AWS', 'Azure', 'Docker'],
     'Programming': ['Python', 'SQL', 'Bash', 'JavaScript', 'HTML/CSS'],
@@ -22,13 +22,13 @@ SKILLS = {
     'DevOps & Tools': ['Git', 'CI/CD', 'Virtual Machines']
 }
 
-# UPDATE WITH YOUR INFO!
+# About section
 ABOUT = {
     'title': 'Cloud & Systems Engineer',
     'bio': '''Entry-level engineer passionate about building scalable infrastructure and automating workflows. 
     Strong foundation in cloud platforms, containerization, and data analysis. 
     Currently seeking opportunities in DevOps, Systems Engineering, or Data Analytics roles.''',
-    'experience_years': '1+',
+    'experience_years': '5+',
     'projects_count': '10+',
     'certifications': ['Coming Soon']
 }
