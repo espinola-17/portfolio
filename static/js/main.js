@@ -13,9 +13,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Scroll reveal
-const revealElements = document.querySelectorAll('.reveal');
-
 const revealOnScroll = () => {
+    const revealElements = document.querySelectorAll('.reveal');
     const windowHeight = window.innerHeight;
     revealElements.forEach(element => {
         const elementTop = element.getBoundingClientRect().top;
@@ -55,7 +54,7 @@ async function fetchGitHubProjects() {
         
         data.projects.forEach(project => {
             const projectCard = document.createElement('div');
-            projectCard.className = 'project-card reveal';
+            projectCard.className = 'project-card reveal active';
             
             projectCard.innerHTML = `
                 <div class="project-header">
@@ -73,8 +72,6 @@ async function fetchGitHubProjects() {
             
             container.appendChild(projectCard);
         });
-        
-        revealOnScroll();
         
     } catch (error) {
         console.error('Error fetching GitHub projects:', error);

@@ -19,6 +19,7 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#github">GitHub</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -106,8 +107,58 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <!-- Technical Projects Section -->
     <section id="projects">
+        <div class="container">
+            <h2 class="section-title reveal">Technical Projects</h2>
+            <p class="section-subtitle reveal">Real-world projects demonstrating hands-on technical skills</p>
+            
+            <div class="technical-projects-container">
+                {% for project in projects %}
+                <div class="project-detail-card reveal">
+                    <div class="project-detail-header">
+                        <div>
+                            <h3 class="project-detail-title">{{ project.title }}</h3>
+                        </div>
+                        <div class="project-tech-tags">
+                            {% for tech in project.tech %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <p class="project-detail-description">{{ project.description }}</p>
+                    <ul class="project-highlights">
+                        {% for highlight in project.highlights %}
+                        <li>{{ highlight }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Education & Resume Download -->
+            <div class="education-resume-section reveal">
+                <div class="education-compact">
+                    <h3>🎓 Education</h3>
+                    <p><strong>AAS Programming & Systems Analysis</strong></p>
+                    <p>Rio Salado College - Expected Summer 2027</p>
+                </div>
+                
+                <div class="resume-download-compact">
+                    <h3>📄 Resume</h3>
+                    <p>DevOps, Systems Engineering & Cloud Infrastructure focus</p>
+                    <a href="{{ url_for('static', filename='resumes/' + resume.file) }}" 
+                    class="btn btn-primary" 
+                    download="{{ resume.filename }}">
+                        Download PDF Resume
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Repositories Section -->
+    <section id="github">
         <div class="container">
             <h2 class="section-title reveal">Featured Projects</h2>
             <p class="section-subtitle reveal">Automatically loaded from my GitHub via Flask API</p>
@@ -154,6 +205,6 @@
         </div>
     </footer>
 
-    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}?v=2"></script>
 </body>
 </html>

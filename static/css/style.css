@@ -362,6 +362,128 @@ section {
     transform: translateY(-2px);
 }
 
+/* Technical Projects Detail Section */
+.technical-projects-container {
+    margin-top: 3rem;
+}
+
+.project-detail-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.project-detail-card:hover {
+    border-color: var(--accent-cyan);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.2);
+}
+
+.project-detail-header {
+    margin-bottom: 1.5rem;
+}
+
+.project-detail-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+}
+
+.project-period {
+    color: var(--text-secondary);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.project-tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-badge {
+    background: rgba(0, 212, 255, 0.15);
+    color: var(--accent-cyan);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+}
+
+.project-detail-description {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.project-highlights {
+    list-style: none;
+    padding-left: 0;
+}
+
+.project-highlights li {
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    margin-bottom: 0.7rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.project-highlights li::before {
+    content: '▹';
+    position: absolute;
+    left: 0;
+    color: var(--accent-cyan);
+    font-size: 1.3rem;
+}
+
+/* Education & Resume Compact Section */
+.education-resume-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.education-compact,
+.resume-download-compact {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.education-compact h3,
+.resume-download-compact h3 {
+    font-size: 1.3rem;
+    color: var(--accent-cyan);
+    margin-bottom: 1rem;
+}
+
+.education-compact p,
+.resume-download-compact p {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+}
+
+.resume-download-compact .btn {
+    margin-top: 1rem;
+}
+
+/* GitHub Projects Section */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -461,6 +583,7 @@ section {
     color: var(--text-secondary);
 }
 
+/* Contact Section */
 .contact-content {
     max-width: 600px;
     margin: 0 auto;
@@ -518,6 +641,7 @@ section {
     box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4);
 }
 
+/* Footer */
 footer {
     background: var(--secondary-bg);
     border-top: 1px solid var(--border-color);
@@ -533,6 +657,7 @@ footer {
     color: var(--accent-cyan);
 }
 
+/* Animations */
 @keyframes fadeInUp {
     from {
         opacity: 0;
@@ -555,6 +680,7 @@ footer {
     transform: translateY(0);
 }
 
+/* Responsive */
 @media (max-width: 768px) {
     .hero-content,
     .about-content {
@@ -576,5 +702,13 @@ footer {
 
     .stats {
         grid-template-columns: 1fr;
+    }
+
+    .education-resume-section {
+        grid-template-columns: 1fr;
+    }
+
+    .project-detail-header {
+        flex-direction: column;
     }
 }
